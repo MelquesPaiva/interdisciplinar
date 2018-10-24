@@ -1,0 +1,15 @@
+.login {
+	background-color: #FFF;
+	min-width: 350px;
+	border-radius: 10px;
+}
+
+.btn-menu {
+	margin-left: 15px;
+}
+.btn-menu:first-child {
+	margin-left: 0px;
+}
+.btn-desc {
+	font-size: 23px;
+}
