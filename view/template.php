@@ -7,6 +7,9 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL;?>assets/css/bootstrap.min.css"/>
 	<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL;?>assets/css/style.css"/>
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"/>
+<?php if(isset($_SESSION['usuario']) && !empty($_SESSION['usuario'])):?>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<?php endif;?>
 </head>
 <body class="bg-light">
 	<div class="container">
@@ -73,5 +76,6 @@
 	<script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
 	<script type="text/javascript" src="<?php echo BASE_URL;?>assets/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="<?php echo BASE_URL;?>assets/js/script.js"></script>
+
 </body>
 </html>

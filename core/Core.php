@@ -11,7 +11,8 @@ class Core {
 		$params = array();
 
 		// Caso tenha passado um controler após o /
-		if(!empty($url) && $url != '/') {
+		if(!empty($url) && $url != '/' &&
+			(!empty($_SESSION['usuario'] || is_null($_SESSION['usuario']) || $_SESSION['usuario'] < 0))) {
 			// Pegando o controller;
 			$url = explode('/', $url);
 			// Array shift usado, pq o url[0], começa em branco. Transferimos o url[1] para o url[0]

@@ -13,3 +13,7 @@
 .btn-desc {
 	font-size: 23px;
 }
+
+#grafico {
+	height: 600px;
+}
