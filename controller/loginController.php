@@ -11,15 +11,17 @@ class loginController extends Controller {
 			$senha = addslashes($_POST['senha']);
 			$usu = $usuario->autenticar($login, $senha);
 
-			$_SESSION['usuario'] = $usu['id'];
-
-			$dados['usuAutenticado'] = $usu;			
+			if(isset($usu) && !empty($usu)) {
+				$_SESSION['usuario'] = $usu['id'];
+				$dados['usuAutenticado'] = $usu;	
+				
+			} else {
+				header("Location:".BASE_URL."login");
+			}			
 		}
 		$this->loadTemplate('login', $dados);
-	}
-	public function sair() {
-		$this->loadTemplate('sair');
-	}
+		
+	}	
 }
 
 ?>

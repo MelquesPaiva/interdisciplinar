@@ -15,7 +15,6 @@ class Usuario extends Model {
 	public function setSenha($senha) {
 		$this->senha = $senha;
 	}
-
 	public function getId() {
 		return $this->id;
 	}
@@ -52,6 +51,19 @@ class Usuario extends Model {
 
 		if($sql->rowCount() > 0) {
 			return $sql->fetch();
+		}
+		return null;
+	}
+
+	public function getDadosAgua($id) {
+		$sql = "SELECT v.qtd_agua, v.data_reg FROM usuario u INNER JOIN volumeagua v ON u.id = v.idUsuario AND u.id = :id";
+		$sql = $this->pdo->prepare($sql);
+		$sql->bindValue(":id", $id);
+		$sql->execute();
+
+		if($sql->rowCount() > 0) {
+			$dados =$sql->fetchAll();
+			return $dados;
 		}
 		return null;
 	}

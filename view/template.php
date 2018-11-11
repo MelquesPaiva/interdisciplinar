@@ -16,22 +16,25 @@
 		<nav class="navbar navbar-expand-lg" style="width: 100%;">
 			<div class="navbar-brand">
 				<div class="display-4 text-info">Seu Consumo</div>
-				<p><h5 class="text-muted">Analisando e te ajudando a gastar menos<h5></p>
+				<p><h4 class="text-muted">Analisando e te ajudando a gastar menos<h4></p>
 			</div>
 			<div class="navbar-collapse justify-content-end">
 				<div class="navbar navbar-tabs">
 					<button class="btn-menu btn btn-outline-info nav-item nav-link border-0" data-toggle="modal" data-target="#modalSobre">
-						<h5 class="display-4 btn-desc">Sobre</h5>
+						<h4 class="display-4 btn-desc">Sobre</h4>
 					</button>
 					<?php if(isset($_SESSION['usuario']) && !empty($_SESSION['usuario'])):?>
+					<a href="<?php echo BASE_URL.'home';?>" class="btn-menu btn btn-outline-info nav-item nav-link border-0">
+						<h4 class="display-4 btn-desc">Página inicial</h4>
+					</a>
 					<button class="btn-menu btn btn-outline-info nav-item nav-link border-0" data-toggle="modal" data-target="#">
-						<h5 class="display-4 btn-desc">Outros</h5>
+						<h4 class="display-4 btn-desc">Opções</h4>
 					</button>
 					<button class="btn-menu btn btn-outline-info nav-item nav-link border-0" data-toggle="modal" data-target="#">
-						<h5 class="display-4 btn-desc">Exemplos</h5>
+						<h4 class="display-4 btn-desc">Exemplos</h4>
 					</button>
-					<a href="<?php BASE_URL?>login/sair" class="btn-menu btn btn-outline-danger nav-item nav-link border-0">
-						<h5 class="display-4 btn-desc">Sair</h5>
+					<a href="<?php BASE_URL?>sair" class="btn-menu btn btn-outline-danger nav-item nav-link border-0">
+						<h4 class="display-4 btn-desc">Sair</h4>
 					</a>
 					<?php endif;?>
 				</div>
@@ -43,7 +46,7 @@
 		<div class="modal-dialog modal-dialog-centered modal-md">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title">O que somos</h5>
+					<h4 class="modal-title">O que somos</h4>
 					<button class="close" data-dismiss="modal"><span>&times;</span></button>
 				</div>
 				<div class="modal-body">
@@ -70,6 +73,7 @@
 		</div>
 	</footer>
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 	<script type="text/javascript" src="<?php echo BASE_URL;?>assets/js/jquery-3.3.1.min.js"></script>
 	<!-- Introduzindo biblioteca de validação do jquery -->
 	<script type="text/javascript" src="http://jqueryvalidation.org/files/dist/jquery.validate.js"></script>

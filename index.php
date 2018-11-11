@@ -1,5 +1,7 @@
 <?php
 session_start();
+// Carregando bibliotecas do composer
+require 'vendor/autoload.php';
 require 'config.php';
 
 spl_autoload_register(function($class) {
