@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<title>Página Principal</title>
@@ -36,13 +36,15 @@
 								Gerar Relatórios PDF
 							</button>
 						    <div class="dropdown-divider"></div>
-						    <a class="dropdown-item" href="#">Exibir Gráficos</a>						   						  
+						    <button class="btn dropdown-item border-0" data-toggle="modal" data-target="#modalGrafico">
+								Exibir Gráficos
+							</button>						   						  
 						</div>						
 					</div>
 					<button class="btn-menu btn btn-outline-info nav-item nav-link border-0" data-target="#">
 						<h4 class="display-4 btn-desc">Exemplos</h4>
 					</button>
-					<a href="<?php BASE_URL?>home/sair" class="btn-menu btn btn-outline-danger nav-item nav-link border-0">
+					<a href="<?php echo BASE_URL;?>login/sair" class="btn-menu btn btn-outline-danger nav-item nav-link border-0">
 						<h4 class="display-4 btn-desc">Sair</h4>
 					</a>
 					<?php endif;?>
@@ -91,6 +93,27 @@
 				</div>
 			</div>
 		</div>
+		<div id="modalGrafico" class="modal fade">
+			<div class="modal-dialog modal-dialog-centered modal-md">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title">Escolha seu gráfico</h4>
+						<button class="close" data-dismiss="modal"><span>&times;</span></button>
+					</div>
+					<div class="modal-body">
+						<div class="container d-flex justify-content-center align-items-center">
+							<div class="btn-group">
+								<a href="#" id="cagua" class="btn btn-primary btn-grafico" class="close" data-dismiss="modal" aria-label="Close">Consumo de água</a>
+								<a href="#" id="cenergia" class="btn btn-primary ml-3 btn-grafico" class="close" data-dismiss="modal" aria-label="Close">Consumo de energia</a>	
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer d-flex justify-content-center">
+						<p class="text-muted">SeuConsumo.com.br</p>
+					</div>
+				</div>
+			</div>
+		</div>
 	<?php endif;?>
 
 	<!-- Carregando view nesse template -->
@@ -111,7 +134,8 @@
 	<script type="text/javascript" src="http://jqueryvalidation.org/files/dist/jquery.validate.js"></script>
 	<script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
 	<script type="text/javascript" src="<?php echo BASE_URL;?>assets/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="<?php echo BASE_URL;?>assets/js/script.js"></script>
+	<script type="text/javascript" src="<?php echo BASE_URL;?>assets/js/application/script.js"></script>
+	<script type="text/javascript" src="<?php echo BASE_URL;?>assets/js/application/request.js"></script>
 
 </body>
 </html>

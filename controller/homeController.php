@@ -6,20 +6,15 @@ class homeController extends Controller {
 		$dados = array();
 
 		$usuario = new Usuario();
-		$usu = array();
-		
+				
 		$array = $usuario->getUsuario($_SESSION['usuario']);		
 		
 		if(isset($array) && !empty($array)) {
-			$usu['id'] = $array['id'];
-			$usu['login'] = $array['login'];
-			$usu['senha'] = $array['senha'];
+			$dados['usuario'] = $array;
 		} else {
 			header('Location'.BASE_URL);
 			session_destroy();
-		}
-		
-		$dados['usuario'] = $usu;
+		}		
 		$this->loadTemplate('home', $dados);
 	}
 
@@ -33,10 +28,7 @@ class homeController extends Controller {
 			print_r($json);
 			return $json;
 		}
-	}
-	public function sair() {
-		$this->loadTemplate('sair');
-	}
+	}	
 }
 
 ?>

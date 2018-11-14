@@ -62,8 +62,13 @@ class Usuario extends Model {
 		$sql->execute();
 
 		if($sql->rowCount() > 0) {
-			$dados =$sql->fetchAll();
-			return $dados;
+			foreach ($sql->fetchAll() as $x) {
+				$data[] = array(
+					'data_reg' => $x['data_reg'],
+					'qtd_agua' => $x['qtd_agua']
+				);
+			}
+			return $data;		
 		}
 		return null;
 	}

@@ -13,15 +13,17 @@ class loginController extends Controller {
 
 			if(isset($usu) && !empty($usu)) {
 				$_SESSION['usuario'] = $usu['id'];
-				$dados['usuAutenticado'] = $usu;	
-				
+				$dados['usuAutenticado'] = $usu;				
 			} else {
 				header("Location:".BASE_URL."login");
 			}			
 		}
-		$this->loadTemplate('login', $dados);
-		
+		$this->loadTemplate("login", $dados);		
 	}	
+
+	public function sair() {
+		$this->loadTemplate("sair");
+	}
 }
 
 ?>
