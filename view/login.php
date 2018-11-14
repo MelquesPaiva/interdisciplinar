@@ -1,7 +1,11 @@
+<?php if(isset($usuAutenticado) && !empty($usuAutenticado)):?>				
+	<script type="text/javascript">window.location.href="<?php echo BASE_URL;?>home";</script>
+<?php endif?>
+
 <div class="container mt-2">
 	<div class="d-flex justify-content-center">
 		<div class="login p-4 shadow">
-			<form method="POST">
+			<form method="POST" action="<?php BASE_URL?>login">
 				<div class="form-group">
 					<label for="login">Login</label>
 					<input type="text" name="login" class="form-control" placeholder="Digite o seu login..."/>

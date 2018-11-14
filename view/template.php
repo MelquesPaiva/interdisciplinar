@@ -19,7 +19,7 @@
 				<p><h4 class="text-muted">Analisando e te ajudando a gastar menos<h4></p>
 			</div>
 			<div class="navbar-collapse justify-content-end">
-				<div class="navbar navbar-tabs">
+				<div class="navbar navbar-tabs" id="menu">
 					<button class="btn-menu btn btn-outline-info nav-item nav-link border-0" data-toggle="modal" data-target="#modalSobre">
 						<h4 class="display-4 btn-desc">Sobre</h4>
 					</button>
@@ -27,13 +27,22 @@
 					<a href="<?php echo BASE_URL.'home';?>" class="btn-menu btn btn-outline-info nav-item nav-link border-0">
 						<h4 class="display-4 btn-desc">Página inicial</h4>
 					</a>
-					<button class="btn-menu btn btn-outline-info nav-item nav-link border-0" data-toggle="modal" data-target="#">
-						<h4 class="display-4 btn-desc">Opções</h4>
-					</button>
-					<button class="btn-menu btn btn-outline-info nav-item nav-link border-0" data-toggle="modal" data-target="#">
+					<div class="btn-group" id="menu-opcoes">
+						<button class="btn-menu btn btn-outline-info nav-item nav-link border-0 dropdown-toggle display-4 op-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Opções				
+						</button>
+						<div class="dropdown-menu">
+							<button class="btn dropdown-item border-0" data-toggle="modal" data-target="#modalRelatorio">
+								Gerar Relatórios PDF
+							</button>
+						    <div class="dropdown-divider"></div>
+						    <a class="dropdown-item" href="#">Exibir Gráficos</a>						   						  
+						</div>						
+					</div>
+					<button class="btn-menu btn btn-outline-info nav-item nav-link border-0" data-target="#">
 						<h4 class="display-4 btn-desc">Exemplos</h4>
 					</button>
-					<a href="<?php BASE_URL?>sair" class="btn-menu btn btn-outline-danger nav-item nav-link border-0">
+					<a href="<?php BASE_URL?>home/sair" class="btn-menu btn btn-outline-danger nav-item nav-link border-0">
 						<h4 class="display-4 btn-desc">Sair</h4>
 					</a>
 					<?php endif;?>
@@ -60,6 +69,29 @@
 			</div>
 		</div>
 	</div>
+	<?php if(isset($_SESSION['usuario']) && !empty($_SESSION['usuario'])):?>
+		<div id="modalRelatorio" class="modal fade">
+			<div class="modal-dialog modal-dialog-centered modal-md">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title">Escolha seu relatorio</h4>
+						<button class="close" data-dismiss="modal"><span>&times;</span></button>
+					</div>
+					<div class="modal-body">
+						<div class="container d-flex justify-content-center align-items-center">
+							<div class="btn-group">
+								<a href="<?php echo BASE_URL;?>relatorio/gerarRelatorio/agua" class="btn btn-primary">Consumo de água</a>
+								<a href="<?php echo BASE_URL;?>relatorio/gerarRelatorio/energia" class="btn btn-primary ml-3">Consumo de energia</a>	
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer d-flex justify-content-center">
+						<p class="text-muted">SeuConsumo.com.br</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	<?php endif;?>
 
 	<!-- Carregando view nesse template -->
 	<?php $this->loadViewInTemplate($viewName, $viewData);?>

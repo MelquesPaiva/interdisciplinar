@@ -3,17 +3,23 @@
 	min-width: 350px;
 	border-radius: 10px;
 }
-
 .btn-menu {
 	margin-left: 15px;
 }
-.btn-menu:first-child {
+#menu .btn-menu:first-child {
 	margin-left: 0px;
 }
 .btn-desc {
 	font-size: 18px;
 }
-
+#menu-opcoes {
+	margin-left: 15px;
+}
+.op-dropdown {
+	font-size: 18px;	
+	font-weight: lighter;
+	margin-bottom: 10px;
+}
 #grafico {
 	height: 600px;
 }
